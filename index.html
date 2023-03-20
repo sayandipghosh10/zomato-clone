@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- starting of padding div -->
+        <div class="padding-div">
+
+            <nav class="navbar">
+
+                <div class="logo-and-bar">
+
+                    <div class="logo">
+                        <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png"
+                            alt="Zomato Logo">
+                    </div>
+
+                    <!-- location and searchbar -->
+                    <div class="location-searchbar">
+
+                        <div class="location-img">
+                            <img src="img/location.png" alt="location-image" title="location-fill">
+                        </div>
+                        <div class="location-bar">
+                            <input type="text" name="location" id="your-location" placeholder="Bengaluru">
+                        </div>
+                        <div class="dropdown-img">
+                            <img src="img/drop-down-arrow.png" alt="dropdown-img" title="down-triangle" id="dropdown-btn" onclick="detectLocationDropdown()">
+                            <div id="locationDropdown">
+                                <div id="dps-img-div">
+                                    <img src="./img/gps.png" alt="gps-picture" id="gps-img">                                
+                                </div>
+                                <div id="dropdown-text-div">
+                                    <p id="dropdown-text-1">Detect current location</p>
+                                    <p id="dropdown-text-2">Using GPS</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="vl"></div>
+                        <div class="search-icon">
+                            <img src="img/magnifying-glass.png" alt="search-icon" title="Search">
+                        </div>
+                        <div class="searchbar">
+                            <input type="text" id="search-bar" placeholder="search for restaurant, cuisine or a dish">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- login and signup -->
+                <div class="login-signup">
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Signup</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <!-- Breadcrumbs-->
+
+            <section class="breadcrumbs">
+                <div class="bcrumbs" id="home">
+                    <a href="#">Home</a><span>/</span>
+                </div>
+                <div class="bcrumbs" id="country">
+                    <a href="#">India</a><span>/</span>
+                </div>
+                <div class="bcrumbs" id="location">
+                    <a href="#">Bengaluru Restaurants</a>
+                </div>
+            </section>
+
+            <!-- Delivery Category -->
+
+            <section class="delivery-category">
+
+                <div class="delivery">
+                    <div class="delivery-img">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png?output-format=webp"
+                            alt="Delivery">
+                    </div>
+                    <a id="delivery" href="">Delivery</a>
+                </div>
+
+                <div class="dinning-out">
+                    <div class="dinning-out-img">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png?output-format=webp"
+                            alt="Dinning-out">
+                    </div>
+                    <a id="dinning-out" href="">Dinning Out</a>
+                </div>
+
+                <div class="night-life">
+                    <div class="night-life-img">
+                        <img src="https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webp"
+                            alt="Nightlife">
+                    </div>
+                    <a id="night-life" href="">Nightlife</a>
+
+                </div>
+
+            </section>
+        </div>
+
+        <!-- end of padding div -->
+
+        <!-- color hr line selector -->
+        <hr id="red-hr">
+        <!-- hr Line -->
+        <hr id="hr">
+
+        <!-- filter -->
+        <div class="main-filter-container">
+
+            <div class="filter-container padding-div">
+
+                <div class="filter f-box common-container">
+                    <img src="img/filters.png" alt="filter-icon" class="filter-icons" id="filter">
+                    <p>Filters</p>
+                </div>
+                <div class="delivery-time f-box common-container">
+                    <img src="img/delivery-time.png" alt="filter-icon" class="filter-icons" id="delivery-time">
+                    <p>Delivery Time</p>
+                </div>
+                <div class="rating common-container">Rating 4.0+</div>
+                <div class="veg-nonveg common-container">Pure Veg</div>
+                <div class="cuisines f-box common-container">
+                    <p>Cuisines</p>
+                    <img src="img/downArrow.png" alt="downArrow" class="filter-icons">
+                </div>
+                <div class="more-filters f-box common-container">
+                    <p>More Filters</p>
+                    <img src="img/downArrow.png" alt="downArrow" class="filter-icons">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Food category -->
+
+        <section id="food-container">
+            <h1 id="category-title" class="food-heading">Inspiration for your first order</h1>
+            <div class="food-category padding-div">
+
+                <div class="each-food">
+                    <img src="https://b.zmtcdn.com/data/dish_images/d19a31d42d5913ff129cafd7cec772f81639737697.png"
+                        alt="">
+                    <p class="food-name">Biryani</p>
+                </div>
+
+                <div class="each-food">
+                    <img src="img/pizza.png" alt="">
+                    <p class="food-name">Pizza</p>
+                </div>
+
+                <div class="each-food">
+                    <img src="https://b.zmtcdn.com/data/dish_images/197987b7ebcd1ee08f8c25ea4e77e20f1634731334.png"
+                        alt="">
+                    <p class="food-name">Chicken</p>
+                </div>
+
+                <div class="each-food">
+                    <img src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png"
+                        alt="">
+                    <p class="food-name">Burger</p>
+                </div>
+
+                <div class="each-food">
+                    <img src="https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png" alt=""
+                        id="thali">
+                    <p class="food-name">Thali</p>
+                </div>
+
+                <div class="each-food">
+                    <img src="https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png"
+                        alt="">
+                    <p class="food-name">Rolls</p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <!-- Top Brands -->
+
+        <section id="brand-container">
+            <h1 id="category-title" class="brand-heading">Top brands for you</h1>
+            <div class="brand-category padding-div">
+
+                <div class="each-brand">
+                    <div class="brand-img">
+
+                        <img src="https://b.zmtcdn.com/data/brand_creatives/logos/1a985408ca7ad8fd097f2c47db9c5cb6_1611252598.png?output-format=webp"
+                            alt="">
+                    </div>
+                    <p class="brand-name">Domino's Pizza</p>
+                    <p>25 min</p>
+                </div>
+
+                <div class="each-brand">
+                    <div class="brand-img">
+
+                        <img src="https://b.zmtcdn.com/data/brand_creatives/logos/239f872f52291fe253a37cc8dd16188f_1663838300.png?output-format=webp"
+                            alt="">
+                    </div>
+                    <p class="brand-name">Truffles</p>
+                    <p>26 min</p>
+                </div>
+
+                <div class="each-brand">
+                    <div class="brand-img">
+
+                        <img src="https://b.zmtcdn.com/data/brand_creatives/logos/ec72c289aa01d947fe15a009ce8e559f_1616052816.png?output-format=webp"
+                            alt="">
+                    </div>
+                    <p class="brand-name">Meghana Foods</p>
+                    <p>28 min</p>
+                </div>
+
+                <div class="each-brand">
+                    <div class="brand-img">
+
+                        <img src="https://b.zmtcdn.com/data/brand_creatives/logos/7a7904eff687a7456599074a4e7d2335_1617875100.png?output-format=webp"
+                            alt="">
+                    </div>
+                    <p class="brand-name">Empire Restaurant</p>
+                    <p>28 min</p>
+                </div>
+
+                <div class="each-brand">
+                    <div class="brand-img macDonald">
+
+                        <img src="https://b.zmtcdn.com/data/brand_creatives/logos/3d80cb89fca9e212f7dab2c1914ebd8f_1643983621.png?output-format=webp"
+                            alt="" id="macDonald">
+                    </div>
+                    <p class="brand-name">McDonald's</p>
+                    <p>19 min</p>
+                </div>
+
+                <div class="each-brand">
+                    <div class="brand-img">
+
+                        <img src="https://b.zmtcdn.com/data/brand_creatives/logos/dc49d77dce0ee7fc8e495fa35be0e747_1648715086.png?output-format=webp"
+                            alt="">
+                    </div>
+                    <p class="brand-name">FreshMenu</p>
+                    <p>29 min</p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <!-- Delivery Restaurants in Bengaluru -->
+
+        <section id="restaurants-container">
+
+            <h1 id="restaurants-category-title" class="restaurants-heading">Delivery Restaurants in Bengaluru</h1>
+            <div class="restaurants-name-container padding-div">
+
+                <div class="outer-container-each-restaurants">
+
+                    <div class="each-restaurants">
+
+                        <div class="restaurant-img-container">
+                            <img class="all-restaurant-img"
+                                src="https://b.zmtcdn.com/data/pictures/chains/1/50471/6fa39637442e85efb64a5c0db7b31b7f_o2_featured_v2.jpg?output-format=webp"
+                                alt="">
+                        </div>
+
+                        <div class="restaurant-name-rating">
+                            <div class="restaurant-name">
+                                <p>Empire Restaurant</p>
+                            </div>
+                            <div class="restaurant-rating">
+                                <p>4.1<span><svg class="star-img" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                            width="0.8rem" height="0.8rem" viewBox="0 0 20 20"
+                                            aria-labelledby="icon-svg-title- icon-svg-desc-" role="img"
+                                            class="sc-rbbb40-0 fauQLv">
+                                            <title>star-fill</title>
+                                            <path
+                                                d="M6.76 6.8l-6.38 0.96c-0.22 0.040-0.38 0.22-0.38 0.44 0 0.12 0.040 0.24 0.12 0.32v0l4.64 4.76-1.1 6.66c0 0.020 0 0.040 0 0.080 0 0.24 0.2 0.44 0.44 0.44 0.1 0 0.16-0.020 0.24-0.060v0l5.7-3.12 5.68 3.12c0.060 0.040 0.14 0.060 0.22 0.060 0.24 0 0.44-0.2 0.44-0.44 0-0.040 0-0.060 0-0.080v0l-1.1-6.66 4.64-4.76c0.080-0.080 0.12-0.2 0.12-0.32 0-0.22-0.16-0.4-0.36-0.44h-0.020l-6.38-0.96-2.96-6.18c-0.060-0.12-0.18-0.2-0.32-0.2s-0.26 0.080-0.32 0.2v0z">
+                                            </path>
+                                        </svg></span></p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-type-price">
+                            <div class="restaurant-type">
+                                <p>North Indian, Biryani, Kebab..</p>
+                            </div>
+                            <div class="restaurant-price">
+                                <p>₹100 for one</p>
+                            </div>
+                        </div>
+
+                        <hr class="restaurant-hr">
+
+                        <div class="order-numbers-container">
+
+                            <div class="surge-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                            <div class="order-numbers">
+                                <p>5150+ orders placed from here recently</p>
+                            </div>
+
+
+                            <div class="maxSaftyDelivery-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="outer-container-each-restaurants">
+
+                    <div class="each-restaurants">
+
+                        <div class="restaurant-img-container">
+                            <img class="all-restaurant-img"
+                                src="https://b.zmtcdn.com/data/pictures/chains/4/50674/a153257d68de3a60406ac31c98f39ccc_o2_featured_v2.jpg?output-format=webp"
+                                alt="">
+                        </div>
+
+                        <div class="restaurant-name-rating">
+                            <div class="restaurant-name">
+                                <p>McDonald's</p>
+                            </div>
+                            <div class="restaurant-rating">
+                                <p>3.9<span><svg class="star-img" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                            width="0.8rem" height="0.8rem" viewBox="0 0 20 20"
+                                            aria-labelledby="icon-svg-title- icon-svg-desc-" role="img"
+                                            class="sc-rbbb40-0 fauQLv">
+                                            <title>star-fill</title>
+                                            <path
+                                                d="M6.76 6.8l-6.38 0.96c-0.22 0.040-0.38 0.22-0.38 0.44 0 0.12 0.040 0.24 0.12 0.32v0l4.64 4.76-1.1 6.66c0 0.020 0 0.040 0 0.080 0 0.24 0.2 0.44 0.44 0.44 0.1 0 0.16-0.020 0.24-0.060v0l5.7-3.12 5.68 3.12c0.060 0.040 0.14 0.060 0.22 0.060 0.24 0 0.44-0.2 0.44-0.44 0-0.040 0-0.060 0-0.080v0l-1.1-6.66 4.64-4.76c0.080-0.080 0.12-0.2 0.12-0.32 0-0.22-0.16-0.4-0.36-0.44h-0.020l-6.38-0.96-2.96-6.18c-0.060-0.12-0.18-0.2-0.32-0.2s-0.26 0.080-0.32 0.2v0z">
+                                            </path>
+                                        </svg></span></p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-type-price">
+                            <div class="restaurant-type">
+                                <p>Burger, Fast Food</p>
+                            </div>
+                            <div class="restaurant-price">
+                                <p>₹250 for one</p>
+                            </div>
+                        </div>
+
+                        <hr class="restaurant-hr">
+
+                        <div class="order-numbers-container">
+
+                            <div class="surge-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                            <div class="order-numbers">
+                                <p>2925+ orders placed from here recently</p>
+                            </div>
+
+
+                            <div class="maxSaftyDelivery-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="outer-container-each-restaurants">
+
+                    <div class="each-restaurants">
+
+                        <div class="restaurant-img-container">
+                            <img class="all-restaurant-img"
+                                src="https://b.zmtcdn.com/data/pictures/chains/4/50574/b60f4031c5e0eaa1e7f6cbc31e02fbdf_o2_featured_v2.jpg"
+                                alt="">
+                        </div>
+
+                        <div class="restaurant-name-rating">
+                            <div class="restaurant-name">
+                                <p>KFC</p>
+                            </div>
+                            <div class="restaurant-rating">
+                                <p>3.7<span><svg class="star-img" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                            width="0.8rem" height="0.8rem" viewBox="0 0 20 20"
+                                            aria-labelledby="icon-svg-title- icon-svg-desc-" role="img"
+                                            class="sc-rbbb40-0 fauQLv">
+                                            <title>star-fill</title>
+                                            <path
+                                                d="M6.76 6.8l-6.38 0.96c-0.22 0.040-0.38 0.22-0.38 0.44 0 0.12 0.040 0.24 0.12 0.32v0l4.64 4.76-1.1 6.66c0 0.020 0 0.040 0 0.080 0 0.24 0.2 0.44 0.44 0.44 0.1 0 0.16-0.020 0.24-0.060v0l5.7-3.12 5.68 3.12c0.060 0.040 0.14 0.060 0.22 0.060 0.24 0 0.44-0.2 0.44-0.44 0-0.040 0-0.060 0-0.080v0l-1.1-6.66 4.64-4.76c0.080-0.080 0.12-0.2 0.12-0.32 0-0.22-0.16-0.4-0.36-0.44h-0.020l-6.38-0.96-2.96-6.18c-0.060-0.12-0.18-0.2-0.32-0.2s-0.26 0.080-0.32 0.2v0z">
+                                            </path>
+                                        </svg></span></p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-type-price">
+                            <div class="restaurant-type">
+                                <p>Burger, Fast Food, Biryani..</p>
+                            </div>
+                            <div class="restaurant-price">
+                                <p>₹250 for one</p>
+                            </div>
+                        </div>
+
+                        <hr class="restaurant-hr">
+
+                        <div class="order-numbers-container">
+
+                            <div class="surge-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                            <div class="order-numbers">
+                                <p>1150+ orders placed from here recently</p>
+                            </div>
+
+
+                            <div class="maxSaftyDelivery-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="outer-container-each-restaurants">
+
+                    <div class="each-restaurants">
+
+                        <div class="restaurant-img-container">
+                            <img class="all-restaurant-img"
+                                src="https://b.zmtcdn.com/data/pictures/chains/2/50382/e8cf1c58f2bb217f3d85ff50b7fe39a3_o2_featured_v2.jpg"
+                                alt="">
+                        </div>
+
+                        <div class="restaurant-name-rating">
+                            <div class="restaurant-name">
+                                <p>Domino's Pizza</p>
+                            </div>
+                            <div class="restaurant-rating">
+                                <p>3.9<span><svg class="star-img" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                            width="0.8rem" height="0.8rem" viewBox="0 0 20 20"
+                                            aria-labelledby="icon-svg-title- icon-svg-desc-" role="img"
+                                            class="sc-rbbb40-0 fauQLv">
+                                            <title>star-fill</title>
+                                            <path
+                                                d="M6.76 6.8l-6.38 0.96c-0.22 0.040-0.38 0.22-0.38 0.44 0 0.12 0.040 0.24 0.12 0.32v0l4.64 4.76-1.1 6.66c0 0.020 0 0.040 0 0.080 0 0.24 0.2 0.44 0.44 0.44 0.1 0 0.16-0.020 0.24-0.060v0l5.7-3.12 5.68 3.12c0.060 0.040 0.14 0.060 0.22 0.060 0.24 0 0.44-0.2 0.44-0.44 0-0.040 0-0.060 0-0.080v0l-1.1-6.66 4.64-4.76c0.080-0.080 0.12-0.2 0.12-0.32 0-0.22-0.16-0.4-0.36-0.44h-0.020l-6.38-0.96-2.96-6.18c-0.060-0.12-0.18-0.2-0.32-0.2s-0.26 0.080-0.32 0.2v0z">
+                                            </path>
+                                        </svg></span></p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-type-price">
+                            <div class="restaurant-type">
+                                <p>Pizza, Italian, Pasta, Fast...</p>
+                            </div>
+                            <div class="restaurant-price">
+                                <p>₹250 for one</p>
+                            </div>
+                        </div>
+
+                        <hr class="restaurant-hr">
+
+                        <div class="order-numbers-container">
+
+                            <div class="surge-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                            <div class="order-numbers">
+                                <p>4250+ orders placed from here recently</p>
+                            </div>
+
+
+                            <div class="maxSaftyDelivery-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="outer-container-each-restaurants">
+
+                    <div class="each-restaurants">
+
+                        <div class="restaurant-img-container">
+                            <img class="all-restaurant-img"
+                                src="https://b.zmtcdn.com/data/pictures/chains/5/61555/6d8f0bd28dab85b3e5e858642c6ee645_o2_featured_v2.jpg"
+                                alt="">
+                        </div>
+
+                        <div class="restaurant-name-rating">
+                            <div class="restaurant-name">
+                                <p>Burger King</p>
+                            </div>
+                            <div class="restaurant-rating">
+                                <p>4.0<span><svg class="star-img" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                            width="0.8rem" height="0.8rem" viewBox="0 0 20 20"
+                                            aria-labelledby="icon-svg-title- icon-svg-desc-" role="img"
+                                            class="sc-rbbb40-0 fauQLv">
+                                            <title>star-fill</title>
+                                            <path
+                                                d="M6.76 6.8l-6.38 0.96c-0.22 0.040-0.38 0.22-0.38 0.44 0 0.12 0.040 0.24 0.12 0.32v0l4.64 4.76-1.1 6.66c0 0.020 0 0.040 0 0.080 0 0.24 0.2 0.44 0.44 0.44 0.1 0 0.16-0.020 0.24-0.060v0l5.7-3.12 5.68 3.12c0.060 0.040 0.14 0.060 0.22 0.060 0.24 0 0.44-0.2 0.44-0.44 0-0.040 0-0.060 0-0.080v0l-1.1-6.66 4.64-4.76c0.080-0.080 0.12-0.2 0.12-0.32 0-0.22-0.16-0.4-0.36-0.44h-0.020l-6.38-0.96-2.96-6.18c-0.060-0.12-0.18-0.2-0.32-0.2s-0.26 0.080-0.32 0.2v0z">
+                                            </path>
+                                        </svg></span></p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-type-price">
+                            <div class="restaurant-type">
+                                <p>Burger, Fast Food, Dessert..</p>
+                            </div>
+                            <div class="restaurant-price">
+                                <p>₹250 for one</p>
+                            </div>
+                        </div>
+
+                        <hr class="restaurant-hr">
+
+                        <div class="order-numbers-container">
+
+                            <div class="surge-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                            <div class="order-numbers">
+                                <p>4900+ orders placed from here recently</p>
+                            </div>
+
+
+                            <div class="maxSaftyDelivery-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="outer-container-each-restaurants">
+
+                    <div class="each-restaurants">
+
+                        <div class="restaurant-img-container">
+                            <img class="all-restaurant-img"
+                                src="https://b.zmtcdn.com/data/pictures/chains/1/50011/fb214a9bcdf4c698bbb6c51261e0ad58_o2_featured_v2.jpg"
+                                alt="">
+                        </div>
+
+                        <div class="restaurant-name-rating">
+                            <div class="restaurant-name">
+                                <p>A2B - Adyar Ananda Bhavan</p>
+                            </div>
+                            <div class="restaurant-rating">
+                                <p>4.2<span><svg class="star-img" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                            width="0.8rem" height="0.8rem" viewBox="0 0 20 20"
+                                            aria-labelledby="icon-svg-title- icon-svg-desc-" role="img"
+                                            class="sc-rbbb40-0 fauQLv">
+                                            <title>star-fill</title>
+                                            <path
+                                                d="M6.76 6.8l-6.38 0.96c-0.22 0.040-0.38 0.22-0.38 0.44 0 0.12 0.040 0.24 0.12 0.32v0l4.64 4.76-1.1 6.66c0 0.020 0 0.040 0 0.080 0 0.24 0.2 0.44 0.44 0.44 0.1 0 0.16-0.020 0.24-0.060v0l5.7-3.12 5.68 3.12c0.060 0.040 0.14 0.060 0.22 0.060 0.24 0 0.44-0.2 0.44-0.44 0-0.040 0-0.060 0-0.080v0l-1.1-6.66 4.64-4.76c0.080-0.080 0.12-0.2 0.12-0.32 0-0.22-0.16-0.4-0.36-0.44h-0.020l-6.38-0.96-2.96-6.18c-0.060-0.12-0.18-0.2-0.32-0.2s-0.26 0.080-0.32 0.2v0z">
+                                            </path>
+                                        </svg></span></p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-type-price">
+                            <div class="restaurant-type">
+                                <p>South Indian, Street Food, N..</p>
+                            </div>
+                            <div class="restaurant-price">
+                                <p>₹250 for one</p>
+                            </div>
+                        </div>
+
+                        <hr class="restaurant-hr">
+
+                        <div class="order-numbers-container">
+
+                            <div class="surge-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                            <div class="order-numbers">
+                                <p>3625+ orders placed from here recently</p>
+                            </div>
+
+
+                            <div class="maxSaftyDelivery-img">
+                                <img src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
+                                    alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Explore options near me -->
+        <section id="Explore-near-me">
+
+            <h1 id="explore-title" class="explore-heading">Explore options near me</h1>
+
+            <div class="explore-container padding-div">
+
+                <!--  -->
+                <div class="explore">
+                    <div class="fold" id="Popular-cuisines">
+                        <p>Popular cuisines near me</p>
+                        <img class="explore-down-arrow" src="img/downArrow.png" alt="">
+                    </div>
+                    
+                    <div class="panel" id="cuisines-panel">
+                        Bakery food near me <span><img class="full-stop" src="img/full-stop.png" alt=""></span> Beverages food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span> Biryani food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Burger food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Chinese food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Continental food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Desserts food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Ice Cream food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Juices food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Kebab food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Mughlai food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>North Indian food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Pizza food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Rolls food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Sandwich food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Seafood food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Shake food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Sichuan food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>South Indian food near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Street food near me
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="explore">
+                    <div class="fold" id="Popular-restaurant">
+                        <p>Popular restaurant types near me</p>
+                        <img class="explore-down-arrow" src="img/downArrow.png" alt="">
+                    </div>
+                    <div class="panel" id="restaurant-panel">
+                        Bakeries near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Bars near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Beverage Shops near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Bhojanalya near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Cafés near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Casual Dining near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Clubs near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Cocktail Bars near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Confectioneries near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Dessert Parlors near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Dhabas near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Fine Dining near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Food Courts near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Food Trucks near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Irani Cafes near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Kiosks near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Lounges near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Microbreweries near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Paan Shop near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Pubs near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Quick Bites near me<span><img class="full-stop" src="img/full-stop.png" alt=""></span>Sweet Shops near me
+                    </div>
+                    
+                </div>
+
+                <!--  -->
+
+                <div class="explore">
+
+                    <div class="fold" id="Top-restaurant">
+                        <p>Top Restaurant Chains</p>
+                        <img class="explore-down-arrow" src="img/downArrow.png" alt="">
+                    </div>
+                    <div class="panel" id="topRestaurants-panel">
+                        <p>Biryani Blues</p>
+                        <p>Burger King</p>
+                        <p>Domino's</p>
+                        <p>KFC</p>
+                        <p>Krispy Kreme</p>                        
+                    </div>
+                    
+                </div>
+
+                <!--  -->
+
+                <div class="explore">
+                    <div class="fold" id="Cities">
+                        <p>Cities We Deliver To</p>
+                        <img class="explore-down-arrow" src="img/downArrow.png" alt="">
+                    </div>
+                     <div class="panel" id="cities-panel">
+                        <a href="#" class="grid-item">Delhi NCR</a>
+                        <a href="#" class="grid-item">Kolkata</a>
+                        <a href="#" class="grid-item">Mumbai</a>  
+                        <a href="#" class="grid-item">Bengaluru</a>
+                        <a href="#" class="grid-item">Pune</a>
+                        <a href="#" class="grid-item">Hyderabad</a> 
+                        <a href="#" class="grid-item">Chennai</a>
+                        <a href="#" class="grid-item">Lucknow</a>
+                        <a href="#" class="grid-item">Kochi</a>
+                        <a href="#" class="grid-item">Jaipur</a>
+                        <a href="#" class="grid-item">Ahmedabad</a>
+                        <a href="#" class="grid-item">Chandigarh</a>
+                        <a href="#" class="grid-item">Goa</a>
+                        <a href="#" class="grid-item">Indore</a>
+                        <a href="#" class="grid-item">Gangtok</a>
+                        <a href="#" class="grid-item">Nashik</a> 
+                        <a href="#" class="grid-item">Ooty</a>
+                        <a href="#" class="grid-item">Shilma</a>
+                        <a href="#" class="grid-item">Ludhiana</a> 
+                        <a href="#" class="grid-item">Guwahati</a>
+                        <a href="#" class="grid-item">Amritsar</a>
+                        <a href="#" class="grid-item">Kanpur</a> 
+                        <a href="#" class="grid-item">Allahabad</a>
+                        <a href="#" class="grid-item">Aurangabad</a>
+                        <a href="#" class="grid-item">Bhopal</a>
+                        <a href="#" class="grid-item">Ranchi</a>
+                        <a href="#" class="grid-item">Visakhapatnam</a>
+                        <a href="#" class="grid-item">Bhubaneswar</a>
+                        <a href="#" class="grid-item">Coimbatore</a>
+                        <a href="#" class="grid-item">Mangalore</a>
+                        <a href="#" class="grid-item">Vadodara</a>
+                        <a href="#" class="grid-item">Nagpur</a>  
+                        <a href="#" class="grid-item">Agra</a>
+                        <a href="#" class="grid-item">Dehradun</a>
+                        <a href="#" class="grid-item">Mysore</a>
+                        <a href="#" class="grid-item">Puducherry</a>  
+                        <a href="#" class="grid-item">Surat</a>
+                        <a href="#" class="grid-item">Varanasi</a>
+                        <a href="#" class="grid-item">Patna</a> 
+                        <a href="#" class="grid-item">Udaipur</a>
+                        <a href="#" class="grid-item">Khajuraho</a>
+                        <a href="#" class="grid-item">Neemrana</a>
+                        <a href="#" class="grid-item">Cuttack</a>
+                        <a href="#" class="grid-item">Trivandrum</a>
+                        <a href="#" class="grid-item">Haridwar</a>
+                        <a href="#" class="grid-item">Leh</a>
+                        <a href="#" class="grid-item">Pushkar</a>
+                        <a href="#" class="grid-item">Rajkot</a>
+                        <a href="#" class="grid-item">Madurai</a> 
+                        <a href="#" class="grid-item">Kozhikode</a>
+                        <a href="#" class="grid-item">Alappuzha</a>
+                        <a href="#" class="grid-item">Thrissur</a> 
+                        <a href="#" class="grid-item">Manipal</a>
+                        <a href="#" class="grid-item">Vijayawada</a>
+                        <a href="#" class="grid-item">Jodhpur</a> 
+                        <a href="#" class="grid-item">Kota</a>
+                        <a href="#" class="grid-item">Ajmer</a>
+                        <a href="#" class="grid-item">Mussoorie</a>
+                        <a href="#" class="grid-item">Rishikesh</a>
+                        <a href="#" class="grid-item">Jalandhar</a>
+                        <a href="#" class="grid-item">Jammu</a>
+                        <a href="#" class="grid-item">Manali</a>
+                        <a href="#" class="grid-item">Dharamshala</a>
+                        <a href="#" class="grid-item">Raipur</a>
+                        <a href="#" class="grid-item" style="color: black;">See more</a>  
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <!-- Footer -->
+
+        <div class="main-footer">
+
+            <div class="footer-container padding-div">
+    
+                <div class="logo-location-language">
+    
+                    <div class="footer-left-brand-img">
+    
+                        <img class="footer-brand-img"
+                            src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*"
+                            alt="">
+                    </div>
+    
+                    <div class="footer-rightOfBrandImg">
+    
+                        <div class="location">
+                            <img class="logo-location-language-img" src="img/india.png" alt="">
+                            <p>India</p>
+                            <img class="logo-location-language-img" src="img/downArrow.png" alt="">
+                        </div>
+                        <div class="language">
+                            <img class="logo-location-language-img" src="img/global.png" alt="">
+                            <p>English</p>
+                            <img class="logo-location-language-img" src="img/downArrow.png" alt="">
+                        </div>
+    
+                    </div>
+    
+                </div>
+
+                <div class="rest-footers-container">
+
+                    <div class="ABOUT-ZOMATO">
+                        <h4 id="about-zomato-heading">ABOUT ZOMATO</h4>
+                        <a href="" class="who-we-are">Who We Are</a>
+                        <a href="" class="Blog">Blog</a>
+                        <a href="" class="Work-With-Us">Work With Us</a>
+                        <a href="" class="Investor-Relations">Investor Relations</a>
+                        <a href="" class="Report-Fraud">Report Fraud</a>
+                        <a href="" class="Contact Us">Contact Us</a>
+                    </div>
+
+                    <div class="ZOMAVERSE">
+                        <h4 id="about-ZOMAVERSE-heading">ZOMAVERSE</h4>
+                        <a href="" class="Zomato">Zomato</a>
+                        <a href="" class="Blinkit">Blinkit</a>
+                        <a href="" class="Feeding India">Feeding India</a>
+                        <a href="" class="Hyperpure">Hyperpure</a>
+                        <a href="" class="Zomaland">Zomaland</a>
+                    </div>
+
+                    <div class="FOR-RESTAURANTS-and-FOR-ENTERPRISES">
+
+                        <div class="for-restaurants">
+                            <h4 id="about-FOR-RESTAURANTS-heading">FOR RESTAURANTS</h4>
+                            <a href="" class="Partner-With-Us">Partner With Us</a>
+                            <a href="" class="Apps-For-You">Apps For You</a>
+                        </div>
+
+                        <div class="for-enterprises">
+                            <h4 id="about-FOR-ENTERPRISES-heading">FOR ENTERPRISES</h4>
+                            <a href="" class="Zomato-For-Work">Zomato For Work</a>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="LEARN-MORE">
+                        <h4 id="Learn-More">LEARN MORE</h4>
+                        <a href="" class="Privacy">Privacy</a>
+                        <a href="" class="Security">Security</a>
+                        <a href="" class="Terms">Terms</a>
+                        <a href="" class="Sitemap">Sitemap</a>
+                    </div>
+
+                    <div class="SOCIAL-LINKS">
+                        <h4 id="social-links">SOCIAL LINK</h4>
+                        <div class="all-social-icon">
+                            <a href="https://www.linkedin.com/company/zomato/?originalSubdomain=in" target="_blank"><img src="img/linkedin.png" alt="" id="linkedin"></a>
+                            <a href="https://www.instagram.com/zomato/" target="_blank"><img src="img/instagram.png" alt="" id="instagram"></a>
+                            <a href="https://twitter.com/zomato" target="_blank"><img src="img/twitter.png" alt="" id="twitter"></a>
+                            <a href="https://www.youtube.com/zomato" target="_blank"><img src="img/youtube.png" alt="" id="youtube"></a>
+                            <a href="https://www.facebook.com/zomato" target="_blank"><img src="img/facebook.png" alt="" id="facebook"></a>
+                        </div>
+                        <div class="apple-store">
+                            <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="" id="apple-store">
+                        </div>
+                        <div class="android-store" >
+                            <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="" id="android-store">
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <hr id="footer-hr">
+
+                <div class="copyright">
+                    <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2023 © Zomato™ Ltd. All rights reserved. <span style="color: red; font-weight: bold;"> This is a clone site made by Sayandip ;)</span></p>
+                </div>
+                
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
